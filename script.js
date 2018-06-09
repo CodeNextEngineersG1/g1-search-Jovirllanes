@@ -50,3 +50,40 @@ let database = [{
 
      }
    }
+
+   function processInput() {
+     let cleanedRecord Name= searchBar.value.toLowerCase().trim();
+     autoSuggestions.innerHTML + '';
+     autoSuggestions.style.display = 'none';
+     autoSuggestions.innerHTML + '';
+     let databaseRecord = getRecord(cleanedInput);
+
+     if (databaseRecord != null) {
+       displayRecord(databaseRecord);
+     } else {
+       alert('No results');
+     }
+   }
+
+   function getRecord(cleanedInput) {
+     console log(" ger record is running");
+     for(let i = 0; i < database.length; i++) {
+       console.log("ayyyy");
+       let cleanedRecordname = database [i].species.toLowerCase().trim();
+       console.log(cleanedRecordName);
+       if(cleanedInput== cleanedRecordName) {
+         return database [i];
+
+       }
+     }
+
+     return null;
+   }
+
+   function displayRecord(databaseRecord) {
+     let recordName = document.createElement("h2");
+     recordName.innerHTML = databaseRecord.name;
+     let recordAge = document.createdElement("h2");
+     recordAge.innerHTML = databaseRecord.age;
+     let recordRelation
+   }
